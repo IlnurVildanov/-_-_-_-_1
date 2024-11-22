@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Треугольник Серпинского</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .canvas-container {
+            position: relative;
+            width: 700px;
+            height: 700px;
+            margin-bottom: 20px;
+            border: 2px solid #fff;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button, input {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004999;
+        }
+        input {
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Треугольник Серпинского</h1>
+    <div class="canvas-container">
+        <canvas id="sierpinskiCanvas" width="700" height="700"></canvas>
+        <canvas id="selectionCanvas" width="700" height="700"></canvas>
+    </div>
+    <div class="controls">
+        <button onclick="resetZoom()">Сбросить масштаб</button>
+        <input type="number" id="iterationInput" value="5" min="1">
+        <button onclick="updateIterations()">Обновить итерации</button>
+    </div>
+    <script src="sierpinski.js"></script>
+</body>
+</html>
